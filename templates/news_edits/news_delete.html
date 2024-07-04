@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ochirish{% endblock title %}
+
+{% block content %}
+<h1>{{news.title}}</h1>
+<div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i></a> <span><i class="fa fa-calendar"></i>{% now 'H:i' %}</span> <a href="#"><i class="fa fa-tags"></i>{{news.cotegory}}</a> </div>
+<div class="single_page_content"> <img class="img-center" src="{{news.image.url}}" alt="">
+    <p>{{news.body}}</p>
+</div>
+<form action="" method="post">{% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-danger text-center">Delete</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block title %}Texnalogiya xabarlari{% endblock title %}
+
+{% block content %}
+
+
+<section id="contentSection">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <aside class="right_content">
+        <div class="single_sidebar">
+          <ul class="spost_nav">
+            {% for texnalogiya in technalogy_news %}
+            <li>
+                <div class="media wow fadeInDown"> <a href="{{texnalogiya.get_absolute_url}}" class="media-left"> <img alt="" src="{{texnalogiya.image.url}}"> </a>
+                  <div class="media-body"> <a href="{{texnalogiya.get_absolute_url}}" class="catg_title">{{texnalogiya.title}}</a> </div>
+                </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock content %}

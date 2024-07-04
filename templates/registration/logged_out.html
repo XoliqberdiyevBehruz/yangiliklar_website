@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Logout{% endblock title %}
+
+{% block content %}
+<div class="container" style="background-color: #ffff;">
+    <div class="container ">
+        <h2>
+            <span style="margin-right:200px ;" >Saytga qaytish uchun - <a href="{% url 'home' %}" style="color: deepskyblue; text-decoration: underline;">Home</a></span>
+            <span style="margin-left: 235px;">Login qilish uchun - <a href="{% url 'login' %}" style="color: deepskyblue; text-decoration: underline;">LogIn</a></span>
+        </h2>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}User Profile{% endblock title %}
+
+{% block content %}
+<section id="contentSection">
+    <div class="row">
+      <h3>Salom {{user.username}}, bu sizning profilingiz!</h3>
+      <p>First name: <a href="{%  url 'profile_edit' %}" style="border-bottom: 1px solid gray; color: royalblue;">{{user.first_name}}</a></p>
+      <p>Last name: <a href="{% url 'profile_edit' %}" style="border-bottom: 1px solid gray;color: royalblue;">{{user.last_name}}</a></p>
+      <p>Your email: <a href="{% url 'profile_edit' %}" style="border-bottom: 1px solid gray;color: royalblue;">{{user.email}}</a></p>
+    </div>
+    <div class="row text-right">
+        <p>
+            <a href="{% url 'profile_edit' %}" style="color: rgb(38, 109, 231);">Hisobingizni taxrirlash</a> |
+            <a href="{% url 'register' %}" style="color: rgb(38, 109, 231);">Yangi hisob yaratish</a> | 
+            <a href="{% url 'logout' %}" style="color: red;">Hisobingizdan chiqish</a>
+        </p>
+    </div>
+  </section>
+{% endblock content %}
